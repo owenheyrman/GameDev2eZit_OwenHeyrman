@@ -1,0 +1,13 @@
+namespace escapismLaptop
+{
+
+    public enum eScene{
+        startMenu,
+        levelSelection,
+        playing
+    }
+
+    //idk why this didnt work so its in game1 for now
+
+
+}

@@ -1,0 +1,8 @@
+namespace escapismLaptop
+{
+    public enum eLevel
+    {
+    level1,
+    level2
+    }
+}
