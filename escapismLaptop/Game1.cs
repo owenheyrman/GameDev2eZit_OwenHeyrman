@@ -9,7 +9,6 @@ using Microsoft.Xna.Framework.Media;
 
 namespace escapismLaptop
 {
-
     public enum eLevel
     {
         level1,
@@ -60,14 +59,6 @@ namespace escapismLaptop
             currentSceneType = eScene.startMenu;
             currentLevelNumber = eLevel.level1;
 
-
-
-
-
-
-
-
-
             base.Initialize();
         }
 
@@ -78,7 +69,6 @@ namespace escapismLaptop
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             ContentManager.getInstance().initializeContent(this);
-
 
             ContentManager.getInstance().menu = new StartMenu();
             currentScene = ContentManager.getInstance().menu;
@@ -95,10 +85,6 @@ namespace escapismLaptop
                     currentSceneType = eScene.startMenu;
                     currentScene = ContentManager.getInstance().menu;
                 }
-
-
-
-
 
             if (currentSceneType == eScene.startMenu)
             {
@@ -126,8 +112,6 @@ namespace escapismLaptop
                 }
             }
 
-
-
             if (currentSceneType == eScene.gameOver)
             {
                 if (Keyboard.GetState().GetPressedKeyCount() > 0)
@@ -135,7 +119,6 @@ namespace escapismLaptop
                     this.Restart();
                 }
             }
-
 
             currentScene.Update(gameTime);
 
@@ -191,9 +174,6 @@ namespace escapismLaptop
                 currentSceneType = eScene.victory;
                 currentScene = new Victory();
             }
-
-
-
         }
 
         private void Restart()

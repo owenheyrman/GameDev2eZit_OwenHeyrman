@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace escapismLaptop.Content.Scenes
 {
@@ -12,6 +13,14 @@ namespace escapismLaptop.Content.Scenes
                 Game1.currentLevel.levelObjects[i].Update(gameTime);
             }
 
+        }
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            base.Draw(spriteBatch);
+            for (int i = 0; i < Game1.currentLevel.levelObjects.Count; i++)
+            {
+                Game1.currentLevel.levelObjects[i].Draw(spriteBatch);
+            }
         }
 
     }
