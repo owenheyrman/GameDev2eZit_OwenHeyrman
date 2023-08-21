@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace escapismLaptop.Content.GameObjects
@@ -21,12 +18,14 @@ namespace escapismLaptop.Content.GameObjects
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            if(texture != null){
+            if (texture != null)
+            {
                 spriteBatch.Draw(texture, location, sourceRectangle, Color.White);
             }
         }
 
-        public virtual void Update(GameTime gameTime){
+        public virtual void Update(GameTime gameTime)
+        {
 
         }
 

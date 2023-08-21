@@ -1,10 +1,12 @@
 
 
-public class Level1 : Level{
+public class Level1 : Level
+{
 
 
 
-    public Level1(){
+    public Level1()
+    {
         Helena helena = new Helena();
         helena.location = new Microsoft.Xna.Framework.Vector2(100, 300);
         levelObjects.Add(helena);

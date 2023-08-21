@@ -1,7 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace escapismLaptop.Content.GameObjects.Enemies
 {
@@ -21,5 +18,5 @@ namespace escapismLaptop.Content.GameObjects.Enemies
             base.Update(gameTime);
         }
     }
-    
+
 }

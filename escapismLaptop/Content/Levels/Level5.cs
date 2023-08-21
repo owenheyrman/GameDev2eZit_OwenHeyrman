@@ -1,8 +1,4 @@
-﻿using escapismLaptop.Content.GameObjects.Enemies;
-using escapismLaptop.Content.GameObjects.Powerups;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using escapismLaptop.Content.GameObjects.Powerups;
 
 namespace escapismLaptop.Content.Levels
 {

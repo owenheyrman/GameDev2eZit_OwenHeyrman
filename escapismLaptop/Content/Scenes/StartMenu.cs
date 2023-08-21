@@ -1,20 +1,20 @@
-
-using escapismLaptop;
 using escapismLaptop.Content;
 using escapismLaptop.Content.GameObjects;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
-public enum Button{
+public enum Button
+{
     play,
     quit
 }
-public class StartMenu : Scene{
+public class StartMenu : Scene
+{
 
     public Button selectedButton;
     GameObject selectionRectangle;
 
-    public StartMenu(){
+    public StartMenu()
+    {
 
         selectedButton = Button.play;
 
@@ -30,13 +30,14 @@ public class StartMenu : Scene{
         selectionRectangle = new GameObject(ContentManager.getInstance().texture_selectionRectangle);
         selectionRectangle.location = new Microsoft.Xna.Framework.Vector2(200, 50);
         this.sceneObjects.Add(selectionRectangle);
-        
+
     }
-    public void changeSelectedButton(){
-        if(this.selectedButton == Button.play)
+    public void changeSelectedButton()
+    {
+        if (this.selectedButton == Button.play)
             selectedButton = Button.quit;
 
-        if(this.selectedButton == Button.quit)
+        if (this.selectedButton == Button.quit)
             selectedButton = Button.play;
     }
 
@@ -44,13 +45,13 @@ public class StartMenu : Scene{
     {
         base.Update(gameTime);
 
-        if(this.selectedButton == Button.play)
+        if (this.selectedButton == Button.play)
             selectionRectangle.location = new Vector2(200, 50);
         else
             selectionRectangle.location = new Vector2(200, 250);
-        
+
     }
-    
+
 
 
 

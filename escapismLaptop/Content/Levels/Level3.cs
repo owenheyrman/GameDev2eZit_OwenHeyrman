@@ -1,7 +1,4 @@
 ﻿using escapismLaptop.Content.GameObjects.Enemies;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace escapismLaptop.Content.Levels
 {

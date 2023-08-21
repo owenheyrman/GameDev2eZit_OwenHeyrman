@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace escapismLaptop.Content.Levels
+﻿namespace escapismLaptop.Content.Levels
 {
     public class Level2 : Level
     {

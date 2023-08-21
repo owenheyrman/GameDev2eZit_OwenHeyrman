@@ -1,21 +1,18 @@
-using escapismLaptop;
 using escapismLaptop.Content;
 using escapismLaptop.Content.Animation;
 using escapismLaptop.Content.GameObjects;
-using escapismLaptop.Content.GameObjects.Enemies;
 using escapismLaptop.Content.GameObjects.Powerups;
 using escapismLaptop.Content.Input;
 using escapismLaptop.Content.Movement;
-using escapismLaptop.Content.Scenes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
-public class Helena : Collideable, ICanPickUp{
+public class Helena : Collideable, ICanPickUp
+{
     private InputManager inputManager;
     private MovementManager movementManager;
 
-    
+
     Animation currentAnimation;
 
     private Animation idleAnimation;
@@ -35,14 +32,15 @@ public class Helena : Collideable, ICanPickUp{
         }
     }
 
-    public Helena():base(ContentManager.getInstance().spritesheetHelena){
+    public Helena() : base(ContentManager.getInstance().spritesheetHelena)
+    {
         inputManager = new InputManager();
         movementManager = new MovementManager(this, 75, 83);
 
 
         InitializeAnimations();
 
-        
+
     }
 
     public void InitializeAnimations()
@@ -75,18 +73,19 @@ public class Helena : Collideable, ICanPickUp{
 
     }
 
-    
+
 
     private SpriteEffects lastDirection;
-    override public void Update(GameTime gameTime) {
+    override public void Update(GameTime gameTime)
+    {
 
         this.currentAnimation.Update(gameTime);
         Move(gameTime);
 
-        
 
 
-        
+
+
 
 
 
@@ -109,19 +108,19 @@ public class Helena : Collideable, ICanPickUp{
         {
             this.currentAnimation = runningAnimation;
         }
-        else if(movementManager.velocity.Y != 0)
+        else if (movementManager.velocity.Y != 0)
         {
             this.currentAnimation = fallAnimation;
-            if(movementManager.velocity.Y <= 1f && movementManager.velocity.Y != 0.12f)
+            if (movementManager.velocity.Y <= 1f && movementManager.velocity.Y != 0.12f)
             {
                 this.currentAnimation = jumpAnimation;
             }
         }
 
-        
+
         if ((movementManager.velocity.Y == 0 || movementManager.velocity.Y == 0.12f) && movementManager.velocity.X == 0)
         {
-            this.currentAnimation = idleAnimation;                       
+            this.currentAnimation = idleAnimation;
         }
 
         if (!flying)
@@ -129,14 +128,14 @@ public class Helena : Collideable, ICanPickUp{
         else
         {
             this.location += 10 * direction;
-            secondCounter+= gameTime.ElapsedGameTime.TotalSeconds;
-            if(secondCounter >= 2)
+            secondCounter += gameTime.ElapsedGameTime.TotalSeconds;
+            if (secondCounter >= 2)
             {
                 flying = false;
                 secondCounter = 0;
             }
         }
-            
+
 
 
 
@@ -148,7 +147,7 @@ public class Helena : Collideable, ICanPickUp{
 
     override public void Draw(SpriteBatch spriteBatch)
     {
-        
+
         spriteBatch.Draw(this.texture, this.location, this.currentAnimation.CurrentFrame.SourceRectangle, Color.White, 0, Vector2.Zero, 0.4f, this.lastDirection, 0);
     }
 
@@ -158,4 +157,4 @@ public class Helena : Collideable, ICanPickUp{
         flying = true;
     }
 }
-    
+

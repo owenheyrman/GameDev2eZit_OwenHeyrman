@@ -1,8 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace escapismLaptop.Content
 {
@@ -15,7 +12,7 @@ namespace escapismLaptop.Content
         public Texture2D texture_helena;
         public Texture2D texture_box;
         public SpriteFont spriteFont;
-        public  StartMenu menu;
+        public StartMenu menu;
         public Texture2D spritesheetHelena;
         public Texture2D texture_gameOver;
         public Texture2D texture_spikes;

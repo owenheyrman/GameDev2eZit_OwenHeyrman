@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace escapismLaptop.Content.GameObjects
+﻿namespace escapismLaptop.Content.GameObjects
 {
     internal class Halfslab : Collideable
     {

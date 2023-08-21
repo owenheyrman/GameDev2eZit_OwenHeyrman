@@ -1,8 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace escapismLaptop.Content.Animation
 {
@@ -32,7 +29,7 @@ namespace escapismLaptop.Content.Animation
         {
             CurrentFrame = frames[counter];
             secondCounter += gameTime.ElapsedGameTime.TotalSeconds;
-            
+
             if (secondCounter >= 1.0 / this.fps)
             {
                 counter++;

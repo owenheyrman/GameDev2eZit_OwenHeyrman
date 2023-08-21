@@ -1,14 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace escapismLaptop.Content.Input
 {
     public class InputManager
     {
-        public Vector2 ReadInput()  
+        public Vector2 ReadInput()
         {
             var state = Keyboard.GetState();
             var direction = Vector2.Zero;

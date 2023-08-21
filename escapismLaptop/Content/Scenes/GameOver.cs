@@ -1,7 +1,4 @@
 ﻿using escapismLaptop.Content.GameObjects;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace escapismLaptop.Content.Scenes
 {

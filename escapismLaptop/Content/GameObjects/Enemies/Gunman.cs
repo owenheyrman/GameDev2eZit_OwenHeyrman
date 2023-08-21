@@ -1,16 +1,13 @@
 ﻿using escapismLaptop.Content.Movement;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace escapismLaptop.Content.GameObjects.Enemies
 {
     internal class Gunman : Collideable
     {
         Animation.Animation animation;
-        
+
 
         private Level level;
         private MovementManager movementManager;
@@ -18,7 +15,7 @@ namespace escapismLaptop.Content.GameObjects.Enemies
 
         private Vector2 direction;
 
-        
+
 
         public Gunman(Level level, Helena helena) : base(ContentManager.getInstance().spritesheetGunman)
         {
@@ -31,7 +28,7 @@ namespace escapismLaptop.Content.GameObjects.Enemies
             animation.AddFrame(new Animation.AnimationFrame(new Rectangle(312, 9, 207, 267)));
 
             this.helena = helena;
-            
+
         }
 
         public override Rectangle Bounds
@@ -50,7 +47,7 @@ namespace escapismLaptop.Content.GameObjects.Enemies
 
             counter += gameTime.ElapsedGameTime.TotalSeconds;
 
-            if(counter > 2)
+            if (counter > 2)
             {
                 counter = 0;
                 Shoot();

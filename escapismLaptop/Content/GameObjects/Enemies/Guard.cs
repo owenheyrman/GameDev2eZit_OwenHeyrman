@@ -1,9 +1,6 @@
 ﻿using escapismLaptop.Content.Movement;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace escapismLaptop.Content.GameObjects.Enemies
 {
@@ -47,9 +44,9 @@ namespace escapismLaptop.Content.GameObjects.Enemies
         {
             direction = DecideDirection(gameTime);
             movementManager.Update(gameTime, direction);
-            
+
         }
-        
+
         private Vector2 DecideDirection(GameTime gameTime)
         {
             if (secondCounter >= 6)
@@ -70,7 +67,7 @@ namespace escapismLaptop.Content.GameObjects.Enemies
                 this.lastDirection = SpriteEffects.FlipHorizontally;
                 return new Vector2(1, 0);
             }
-                
+
 
         }
 

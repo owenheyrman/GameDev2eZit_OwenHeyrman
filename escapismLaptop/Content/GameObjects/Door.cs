@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace escapismLaptop.Content.GameObjects
+﻿namespace escapismLaptop.Content.GameObjects
 {
     internal class Door : Collideable
     {
@@ -10,8 +6,8 @@ namespace escapismLaptop.Content.GameObjects
         {
         }
 
-        
+
 
     }
-   
+
 }

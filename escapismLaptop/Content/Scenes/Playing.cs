@@ -1,7 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace escapismLaptop.Content.Scenes
 {
@@ -14,7 +11,7 @@ namespace escapismLaptop.Content.Scenes
             {
                 Game1.currentLevel.levelObjects[i].Update(gameTime);
             }
-            
+
         }
 
     }

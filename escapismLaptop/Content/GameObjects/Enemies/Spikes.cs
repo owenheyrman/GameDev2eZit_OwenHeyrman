@@ -1,7 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace escapismLaptop.Content.GameObjects.Enemies
 {
@@ -15,7 +12,7 @@ namespace escapismLaptop.Content.GameObjects.Enemies
         {
             get
             {
-                return new Rectangle((int)this.location.X+10, (int)this.location.Y+5, this.texture.Width-20, this.texture.Height-5);
+                return new Rectangle((int)this.location.X + 10, (int)this.location.Y + 5, this.texture.Width - 20, this.texture.Height - 5);
             }
         }
 

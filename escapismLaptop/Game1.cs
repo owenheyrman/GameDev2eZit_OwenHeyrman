@@ -12,13 +12,14 @@ namespace escapismLaptop
 
     public enum eLevel
     {
-    level1,
-    level2,
-    level3,
-    level4,
-    level5
+        level1,
+        level2,
+        level3,
+        level4,
+        level5
     }
-    public enum eScene{
+    public enum eScene
+    {
         startMenu,
         playing,
         gameOver,
@@ -39,7 +40,7 @@ namespace escapismLaptop
 
         public static InputManager inputManager;
 
-        
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -59,13 +60,13 @@ namespace escapismLaptop
             currentSceneType = eScene.startMenu;
             currentLevelNumber = eLevel.level1;
 
-            
 
-            
 
-            
 
-            
+
+
+
+
 
             base.Initialize();
         }
@@ -89,28 +90,34 @@ namespace escapismLaptop
         protected override void Update(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
-                if(currentSceneType == eScene.playing)
+                if (currentSceneType == eScene.playing)
                 {
                     currentSceneType = eScene.startMenu;
                     currentScene = ContentManager.getInstance().menu;
                 }
-                    
-           
 
-            
 
-            if(currentSceneType == eScene.startMenu){
-                if (Keyboard.GetState().IsKeyDown(Keys.Down)){
+
+
+
+            if (currentSceneType == eScene.startMenu)
+            {
+                if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                {
                     (currentScene as StartMenu).selectedButton = Button.quit;
                 }
-                if (Keyboard.GetState().IsKeyDown(Keys.Up)){
+                if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                {
                     (currentScene as StartMenu).selectedButton = Button.play;
                 }
-                if (Keyboard.GetState().IsKeyDown(Keys.Enter)){
-                    if ((currentScene as StartMenu).selectedButton == Button.quit){
+                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                {
+                    if ((currentScene as StartMenu).selectedButton == Button.quit)
+                    {
                         Exit();
                     }
-                    if ((currentScene as StartMenu).selectedButton == Button.play){
+                    if ((currentScene as StartMenu).selectedButton == Button.play)
+                    {
                         currentSceneType = eScene.playing;
                         currentScene = new Playing();
                         if (currentLevel == null)
@@ -121,14 +128,14 @@ namespace escapismLaptop
 
 
 
-            if(currentSceneType == eScene.gameOver)
+            if (currentSceneType == eScene.gameOver)
             {
                 if (Keyboard.GetState().GetPressedKeyCount() > 0)
                 {
                     this.Restart();
                 }
             }
-                
+
 
             currentScene.Update(gameTime);
 
@@ -140,11 +147,11 @@ namespace escapismLaptop
             GraphicsDevice.Clear(Color.DarkGray);
 
             _spriteBatch.Begin();
-            if(currentSceneType == eScene.playing)
-            _spriteBatch.Draw(ContentManager.getInstance().background, new Rectangle(0, 0, 960, 640), Color.White);
+            if (currentSceneType == eScene.playing)
+                _spriteBatch.Draw(ContentManager.getInstance().background, new Rectangle(0, 0, 960, 640), Color.White);
 
             currentScene.Draw(_spriteBatch);
-            
+
             _spriteBatch.End();
 
             // TODO: Add your drawing code here
@@ -154,17 +161,17 @@ namespace escapismLaptop
 
         public static void Lose()
         {
-            currentSceneType = eScene.gameOver; 
+            currentSceneType = eScene.gameOver;
             currentScene = new GameOver();
         }
         public static void WinLevel()
         {
-            if(currentLevelNumber == eLevel.level1)
+            if (currentLevelNumber == eLevel.level1)
             {
                 currentLevelNumber = eLevel.level2;
                 currentLevel = new Level2();
             }
-            else if(currentLevelNumber == eLevel.level2)
+            else if (currentLevelNumber == eLevel.level2)
             {
                 currentLevelNumber = eLevel.level3;
                 currentLevel = new Level3();
@@ -174,7 +181,7 @@ namespace escapismLaptop
                 currentLevelNumber = eLevel.level4;
                 currentLevel = new Level4();
             }
-            else if(currentLevelNumber == eLevel.level4)
+            else if (currentLevelNumber == eLevel.level4)
             {
                 currentLevelNumber = eLevel.level5;
                 currentLevel = new Level5();

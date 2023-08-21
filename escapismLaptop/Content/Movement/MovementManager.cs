@@ -2,11 +2,6 @@
 using escapismLaptop.Content.GameObjects.Enemies;
 using escapismLaptop.Content.GameObjects.Powerups;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace escapismLaptop.Content.Movement
 {
@@ -21,7 +16,7 @@ namespace escapismLaptop.Content.Movement
         private float jumpHeight;
         private float gravity;
 
-        public Vector2 velocity =  Vector2.Zero;
+        public Vector2 velocity = Vector2.Zero;
 
         private float acceleration;
         private float deceleration;
@@ -47,12 +42,12 @@ namespace escapismLaptop.Content.Movement
 
         public void Update(GameTime gameTime, Vector2 direction)
         {
-            if(!this.grounded) 
+            if (!this.grounded)
             {
                 this.velocity.Y += gravity;
             }
 
-            if(direction.X != 0)
+            if (direction.X != 0)
             {
                 if (direction.X > 0)
                 {
@@ -115,19 +110,19 @@ namespace escapismLaptop.Content.Movement
 
 
             //gradually slow to a stop
-            if(velocity.X != 0)
+            if (velocity.X != 0)
             {
                 velocity.X *= 0.95f;
-                
-                if(velocity.X > 0)
+
+                if (velocity.X > 0)
                 {
                     velocity.X -= 0.02f;
                 }
-                if(velocity.X < 0)
+                if (velocity.X < 0)
                 {
-                      velocity.X += 0.02f;
+                    velocity.X += 0.02f;
                 }
-                if(velocity.X < 0.05f && velocity.X > -0.05f)
+                if (velocity.X < 0.05f && velocity.X > -0.05f)
                 {
                     velocity.X = 0;
                 }
@@ -137,25 +132,25 @@ namespace escapismLaptop.Content.Movement
 
             CheckAndHandleWalkedOffEdge();
             CheckAndHandleJumpingIntoRoof();
-            
+
         }
 
         public Rectangle calculateCollisions()
         {
             for (int i = 0; i < Game1.currentLevel.levelObjects.Count; i++)
-            {   
+            {
                 if (Game1.currentLevel.levelObjects[i] is Collideable)
                 {
-                    if (((Collideable)Game1.currentLevel.levelObjects[i]).CollidesWith((Collideable)this.gameObject) && !((Collideable)Game1.currentLevel.levelObjects[i] == (Collideable)this.gameObject) )
+                    if (((Collideable)Game1.currentLevel.levelObjects[i]).CollidesWith((Collideable)this.gameObject) && !((Collideable)Game1.currentLevel.levelObjects[i] == (Collideable)this.gameObject))
                     {
                         if (Game1.currentLevel.levelObjects[i] is Spikes || Game1.currentLevel.levelObjects[i] is Guard || Game1.currentLevel.levelObjects[i] is GunmanBullet)
                             Game1.Lose();
                         if (Game1.currentLevel.levelObjects[i] is Door)
                             Game1.WinLevel();
-                        if (Game1.currentLevel.levelObjects[i] is Wings)                    
+                        if (Game1.currentLevel.levelObjects[i] is Wings)
                             if (gameObject is ICanPickUp)
                                 (gameObject as ICanPickUp).ActivateFlight();
-                        
+
                         return ((Collideable)Game1.currentLevel.levelObjects[i]).Bounds;
                     }
                 }
@@ -182,8 +177,8 @@ namespace escapismLaptop.Content.Movement
                     futureBounds.X -= maxX;
                 }
             }
-            
-            
+
+
             if (!xAxis && velocity.Y != 0)
             {
                 if (velocity.Y > 0)
@@ -196,7 +191,7 @@ namespace escapismLaptop.Content.Movement
                 }
             }
 
-            
+
 
 
             this.gameObject.location = new Vector2(futureBounds.X, futureBounds.Y);
@@ -204,7 +199,7 @@ namespace escapismLaptop.Content.Movement
             this.gameObject.location = currentBounds.Location.ToVector2();
             if (collision != Rectangle.Empty)
             {
-                if(velocity.Y >= gravity && (futureBounds.Bottom > collision.Top - maxSpeed) && (futureBounds.Bottom <= collision.Top + velocity.Y))
+                if (velocity.Y >= gravity && (futureBounds.Bottom > collision.Top - maxSpeed) && (futureBounds.Bottom <= collision.Top + velocity.Y))
                 {
                     LandResponse(collision);
                     return true;
@@ -226,7 +221,7 @@ namespace escapismLaptop.Content.Movement
         public void CheckAndHandleWalkedOffEdge()
         {
             this.gameObject.location.Y += 2;
-            if(!WillCollide(false))
+            if (!WillCollide(false))
             {
                 this.gameObject.location.Y -= 2;
                 this.grounded = false;

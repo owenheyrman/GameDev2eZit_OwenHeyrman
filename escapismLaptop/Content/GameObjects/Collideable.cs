@@ -1,7 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace escapismLaptop.Content.GameObjects
 {
@@ -29,6 +26,6 @@ namespace escapismLaptop.Content.GameObjects
                 return false;
         }
 
-        
+
     }
 }
