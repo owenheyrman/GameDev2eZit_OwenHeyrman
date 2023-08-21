@@ -6,7 +6,6 @@ using System.Collections.Generic;
 public abstract class Level
 {
     public List<GameObject> levelObjects;
-    public List<Spikes> spikes;
 
     public int[,] tileMap;
 

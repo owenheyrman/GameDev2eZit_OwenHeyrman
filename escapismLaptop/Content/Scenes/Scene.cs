@@ -15,34 +15,18 @@ public abstract class Scene
     {
         this.sceneObjects = new List<GameObject>();
     }
-
-
-
     public virtual void Update(GameTime gameTime)
     {
         foreach (GameObject gameObject in sceneObjects)
         {
             gameObject.Update(gameTime);
         }
-
-
     }
-
     public virtual void Draw(SpriteBatch spriteBatch)
     {
         foreach (GameObject gameObject in sceneObjects)
         {
             gameObject.Draw(spriteBatch);
         }
-
-        if (Game1.currentSceneType == eScene.playing)
-        {
-            foreach (GameObject gameObject in Game1.currentLevel.levelObjects)
-            {
-                gameObject.Draw(spriteBatch);
-            }
-        }
-
-
     }
 }
